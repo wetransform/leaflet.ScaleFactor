@@ -47,7 +47,8 @@
             document.body.appendChild(heightRef);
 
             heightRef = document.getElementById('heightRef');
-            var pxPermm = $('#heightRef').height();
+            // var pxPermm = $('#heightRef').height(); // requires jQuery >= 1.0.0
+            var pxPermm = parseFloat(getComputedStyle(heightRef, null).height.replace("px", ""))
 
             heightRef.parentNode.removeChild(heightRef);
 
